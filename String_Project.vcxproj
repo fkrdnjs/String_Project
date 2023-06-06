@@ -140,9 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+    <ClCompile Include="my_strcpy.c" />
     <ClCompile Include="my_strlen.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="my_strcpy.h" />
     <ClInclude Include="my_strlen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -6,6 +6,7 @@
 #include "my_strcpy.h"
 #include "my_strncpy.h"
 #include "my_strcat.h"
+#include "my_strncat.h"
 
 int main(void)
 {
@@ -30,6 +31,11 @@ int main(void)
     const char* src = "World!";
     my_strcat(dest3, src);
     printf("Concatenated string: %s\n", dest3);
+
+    //my_strncat 작동 코드
+    char dest4[20] = "Hello, ";
+    my_strncat(dest4, src, 3);
+    printf("Concatenated string: %s\n", dest4);
 
     return 0;
 }

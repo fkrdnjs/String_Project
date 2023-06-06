@@ -24,12 +24,18 @@
     <ClCompile Include="my_strcpy.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="my_strncpy.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="my_strlen.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="my_strcpy.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="my_strncpy.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

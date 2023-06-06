@@ -1,1 +1,1 @@
-#pragma once
+unsigned int my_strlen(const char* str);

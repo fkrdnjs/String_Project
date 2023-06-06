@@ -140,11 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+    <ClCompile Include="my_strcat.c" />
     <ClCompile Include="my_strcpy.c" />
     <ClCompile Include="my_strlen.c" />
     <ClCompile Include="my_strncpy.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="my_strcat.h" />
     <ClInclude Include="my_strcpy.h" />
     <ClInclude Include="my_strlen.h" />
     <ClInclude Include="my_strncpy.h" />

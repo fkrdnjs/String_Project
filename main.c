@@ -5,6 +5,7 @@
 #include "my_strlen.h"
 #include "my_strcpy.h"
 #include "my_strncpy.h"
+#include "my_strcat.h"
 
 int main(void)
 {
@@ -23,6 +24,12 @@ int main(void)
     int n = 5;
     my_strncpy(dest2, str, n);
     printf("Copied string: %s\n", dest2);
+
+    //my_strcat 작동 코드
+    char dest3[20] = "Hello, ";
+    const char* src = "World!";
+    my_strcat(dest3, src);
+    printf("Concatenated string: %s\n", dest3);
 
     return 0;
 }

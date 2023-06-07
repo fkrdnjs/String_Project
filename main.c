@@ -13,71 +13,103 @@
 
 int main(void)
 {
-    //my_strlen 작동 코드
+    //my_strlen 작동 코드 - 문자열 길이 반환-----------------------------------------------------------
     char* str = "Hello, World!";
     int length = my_strlen(str);
-    printf("Length of the string: %u\n", length);
+    printf("my_strlen 작동 코드 - 문자열의 길이 반환\n");
+    printf("문자열 : %s\n", str);
+    printf("결과 : %d\n\n", length);
 
-    //my_strcpy 작동 코드
-    char dest[20];
+    //my_strcpy 작동 코드 - 전체 문자열 복사------------------------------------------------------------
+    char* dest;
+
+    dest = (int*)malloc(sizeof(int) * (my_strlen(str) + 1));
+    if (dest == NULL)//동적할당으로 문자열 길이 상관 없이 작동하게 함
+        return -1;
+
+    printf("my_strcpy 작동 코드 - 전체 문자열 복사\n");
+    printf("문자열 : %s\n", str);
     my_strcpy(dest, str);
-    printf("Copied string: %s\n", dest);
+    printf("결과 : %s\n\n", dest);
+    free(dest);
 
-    //my_strncpy 작동 코드
-    char dest2[20];
+    //my_strncpy 작동 코드 - 원하는 길이만큼 문자열 복사------------------------------------------------------
+    char *dest2;
     int n = 5;
+
+    dest2 = (int*)malloc(sizeof(int) * (my_strlen(str) + 1));
+    if (dest2 == NULL)//동적할당으로 문자열 길이 상관 없이 작동하게 함
+        return -1;
+
+    printf("my_strncpy 작동 코드 - 원하는 길이만큼 문자열 복사\n");
+    printf("문자열 : %s\n길이 : %d\n", str, n);
     my_strncpy(dest2, str, n);
-    printf("Copied string: %s\n", dest2);
+    printf("결과 : %s\n\n", dest2);
+    free(dest2);
 
-    //my_strcat 작동 코드
-    char dest3[20] = "Hello, ";
+    //my_strcat 작동 코드 - 문자열 전체 합치기--------------------------------------------------------------------
+    char dest3[101] = "Hello, "; // 충분한 길이의 배열 할당 필요
     const char* src = "World!";
+
+    printf("my_strcat 작동 코드 - 문자열 전체 합치기\n");
+    printf("문자열1 : %s\n문자열2 : %s\n", dest3, src);
     my_strcat(dest3, src);
-    printf("Concatenated string: %s\n", dest3);
+    printf("결과 : %s\n\n", dest3);
 
-    //my_strncat 작동 코드
-    char dest4[20] = "Hello, ";
+    //my_strncat 작동 코드 - 원하는 길이만큼 문자열 합치기-------------------------------------------------------
+    char dest4[101] = "Hello, "; // 충분한 길이의 배열 할당 필요
+    
+    printf("my_strncat 작동 코드 - 원하는 길이만큼 문자열 합치기\n");
+    printf("문자열1 : %s\n문자열2 : %s\n길이 : %d\n", dest4, src,3);
     my_strncat(dest4, src, 3);
-    printf("Concatenated string: %s\n", dest4);
+    printf("결과 : %s\n\n", dest4);
 
-    //my_strcmp 작동 코드
+    //my_strcmp 작동 코드 - 전체 문자열 일치 여부, 사전순서 비교---------------------------------------------------
     char* str1 = "Hello";
     char* str2 = "World";
     int result = my_strcmp(str1, str2);
+    printf("my_strcmp 작동 코드 - 전체 문자열 일치 여부, 사전순서 비교\n");
+    printf("str1 : %s\nstr2 : %s\n", str1, str2);
+
+    if (result < 0) { // 사전순으로 str1이 더 앞에 있다.
+        printf("결과 : str1이 사전순으로 더 앞이다.\n\n");
+    }
+    else if (result > 0) { // 사전순으로 str2가 더 앞에 있다.
+        printf("결과 : str2가 사전순으로 더 앞이다.\n\n");
+    }
+    else { // 두 문자열 일치
+        printf("결과 : 두 문자열 일치\n\n");
+    }
+
+    //my_strncmp 작동 코드 - 원하는 길이만큼 문자열 일치 여부, 사전순서 비교-----------------------------------------
+    char* strA = "Hello, World!";
+    char* strB = "Hello, C!";
+    result = my_strncmp(strA, strB, 6);
+    printf("my_strncmp 작동 코드 - 원하는 길이만큼 문자열 일치 여부, 사전순서 비교\n");
+    printf("strA : %s\nstrB : %s\n길이 : %d\n", strA, strB, 6);
 
     if (result < 0) {
-        printf("str1 is less than str2\n");
+        printf("결과 : strA가 사전순으로 더 앞이다.\n\n");
     }
     else if (result > 0) {
-        printf("str1 is greater than str2\n");
+        printf("결과 : strB가 사전순으로 더 앞이다.\n\n");
     }
     else {
-        printf("str1 is equal to str2\n");
+        printf("결과 : 두 문자열 일치\n\n");
     }
 
-    //my_strncmp 작동 코드
-    char* str11 = "Hello, World!";
-    char* str22 = "Hello, C!";
-    result = my_strncmp(str11, str22, 6);
-    if (result < 0) {
-        printf("str11 is less than str22\n");
-    }
-    else if (result > 0) {
-        printf("str11 is greater than str22\n");
-    }
-    else {
-        printf("str11 is equal to str22\n");
-    }
-
-    //my_strchr 작동 코드
+    //my_strchr 작동 코드 - 해당 문자가 문자열에 있는지, 있다면 몇번째 인덱스에 있는지 반환------------------------------
     str = "Hello, World!";
     int ch = 'W';
     char* result2 = my_strchr(str, ch);
+    printf("my_strchr 작동 코드 - 해당 문자가 문자열에 있는지, 있다면 몇번째 인덱스에 있는지 반환\n");
+    printf("문자열 : %s\n문자 : %c\n", str, ch);
+
     if (result2 != NULL) {
-        printf("Character '%c' found at position %ld\n", ch, result2 - str);
+        printf("결과 : '%c'는 %d번째 인덱스에 있다.\n\n", ch, result2 - str);
     }
     else {
-        printf("Character '%c' not found\n", ch);
+        printf("결과 : '%c' 없다.\n\n", ch);
     }
 
     return 0;

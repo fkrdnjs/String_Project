@@ -9,6 +9,7 @@
 #include "my_strncat.h"
 #include "my_strcmp.h"
 #include "my_strncmp.h"
+#include "my_strchr.h"
 
 int main(void)
 {
@@ -66,6 +67,17 @@ int main(void)
     }
     else {
         printf("str11 is equal to str22\n");
+    }
+
+    //my_strchr 작동 코드
+    str = "Hello, World!";
+    int ch = 'W';
+    char* result2 = my_strchr(str, ch);
+    if (result2 != NULL) {
+        printf("Character '%c' found at position %ld\n", ch, result2 - str);
+    }
+    else {
+        printf("Character '%c' not found\n", ch);
     }
 
     return 0;

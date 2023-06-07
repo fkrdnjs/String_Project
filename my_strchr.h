@@ -1,0 +1,1 @@
+char* my_strchr(const char* str, int ch);

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="main.c" />
     <ClCompile Include="my_strcat.c" />
+    <ClCompile Include="my_strchr.c" />
     <ClCompile Include="my_strcmp.c" />
     <ClCompile Include="my_strcpy.c" />
     <ClCompile Include="my_strlen.c" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="my_strcat.h" />
+    <ClInclude Include="my_strchr.h" />
     <ClInclude Include="my_strcmp.h" />
     <ClInclude Include="my_strcpy.h" />
     <ClInclude Include="my_strlen.h" />

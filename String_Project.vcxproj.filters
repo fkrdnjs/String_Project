@@ -36,6 +36,9 @@
     <ClCompile Include="my_strcmp.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="my_strncmp.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="my_strlen.h">
@@ -54,6 +57,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="my_strcmp.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="my_strncmp.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,6 +7,8 @@
 #include "my_strncpy.h"
 #include "my_strcat.h"
 #include "my_strncat.h"
+#include "my_strcmp.h"
+#include "my_strncmp.h"
 
 int main(void)
 {
@@ -50,6 +52,20 @@ int main(void)
     }
     else {
         printf("str1 is equal to str2\n");
+    }
+
+    //my_strncmp 작동 코드
+    char* str11 = "Hello, World!";
+    char* str22 = "Hello, C!";
+    result = my_strncmp(str11, str22, 6);
+    if (result < 0) {
+        printf("str11 is less than str22\n");
+    }
+    else if (result > 0) {
+        printf("str11 is greater than str22\n");
+    }
+    else {
+        printf("str11 is equal to str22\n");
     }
 
     return 0;

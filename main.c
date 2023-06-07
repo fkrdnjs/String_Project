@@ -21,31 +21,21 @@ int main(void)
     printf("결과 : %d\n\n", length);
 
     //my_strcpy 작동 코드 - 전체 문자열 복사------------------------------------------------------------
-    char* dest;
-
-    dest = (int*)malloc(sizeof(int) * (my_strlen(str) + 1));
-    if (dest == NULL)//동적할당으로 문자열 길이 상관 없이 작동하게 함
-        return -1;
+    char dest[101]; //복사하고자 하는 문자열보다 더 긴 길이로 선언 필요
 
     printf("my_strcpy 작동 코드 - 전체 문자열 복사\n");
     printf("문자열 : %s\n", str);
     my_strcpy(dest, str);
     printf("결과 : %s\n\n", dest);
-    free(dest);
 
     //my_strncpy 작동 코드 - 원하는 길이만큼 문자열 복사------------------------------------------------------
-    char *dest2;
+    char dest2[101]; //복사하고자 하는 문자열보다 더 긴 길이로 선언 필요
     int n = 5;
-
-    dest2 = (int*)malloc(sizeof(int) * (my_strlen(str) + 1));
-    if (dest2 == NULL)//동적할당으로 문자열 길이 상관 없이 작동하게 함
-        return -1;
 
     printf("my_strncpy 작동 코드 - 원하는 길이만큼 문자열 복사\n");
     printf("문자열 : %s\n길이 : %d\n", str, n);
     my_strncpy(dest2, str, n);
     printf("결과 : %s\n\n", dest2);
-    free(dest2);
 
     //my_strcat 작동 코드 - 문자열 전체 합치기--------------------------------------------------------------------
     char dest3[101] = "Hello, "; // 충분한 길이의 배열 할당 필요

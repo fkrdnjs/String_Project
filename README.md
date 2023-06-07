@@ -20,7 +20,7 @@
 ![image](https://github.com/fkrdnjs/String_Project/assets/68600918/184b8cba-7f66-49b3-9ead-bc68ac6c6fd8)
 
 3. String_Project.sln 더블 클릭해서 실행
-![image](https://github.com/fkrdnjs/String_Project/assets/68600918/61762280-0300-44d0-ad8c-695e2e83f777)
+![image](https://github.com/fkrdnjs/String_Project/assets/68600918/3cd8e4b7-0052-42f8-96ae-2bcb2a56dde9)
 
 4. 소스 코드 안에 있는 main.c 클릭 후 ctrl+f5로 컴파일
-![image](https://github.com/fkrdnjs/String_Project/assets/68600918/72c96ada-c133-4f32-a606-2b9f06199b52)
+![image](https://github.com/fkrdnjs/String_Project/assets/68600918/f65065ed-05bc-43e0-a825-04c9cfe25c96)
